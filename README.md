@@ -9,7 +9,7 @@ The compilation of this repository is all done in the podman environment.
 
 ### Installation ( Dockerize )
 
-The completion of docker-image in the windows environment needs to be carried out in the following two stages:
+The completion of docker-image in the **Windows-10** environment needs to be carried out in the following two stages:
 1. You can build an image from Dockerfile: `docker build -t nginsxi -f windows-10/Dockerfile .
 
 2. Download [automated build](https://registry.hub.docker.com/u/dockerfile/mongodb/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull dockerfile/mongodb`
