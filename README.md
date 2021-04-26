@@ -16,7 +16,12 @@ The **Windows-10** environment is based on the following steps:
 5. scp natiosxi-5.8.3.tar to the destination host you want to deploy.
 6. Execute **"podman load -i natiosxi-5.8.3.tar"** on the destination host of your deployment.
 
-   (alternatively, you can build an image from Dockerfile: `docker build -t="dockerfile/mongodb" github.com/dockerfile/mongodb`)
+The **Linux** environment is based on the following steps:
+1. You can build an image from Linux/Dockerfile: **"docker build -t nagiosxi:latest ."** .
+2. Execute **“podman save nagiosxi -o nagiosxi-latest.tar”** then scp nagiosxi-latest.tar to the destination host you want to deploy.
+3. Execute **"podman load -i natiosxi-5.8.3.tar"** on the destination host of your deployment.
+
+(alternatively, you can build an image from Dockerfile: `docker build -t="dockerfile/mongodb" github.com/dockerfile/mongodb`)
 
 
 ### Usage ( Containerize )
