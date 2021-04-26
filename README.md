@@ -41,7 +41,8 @@ The **Linux** environment is based on the following steps:
 5. Execute **"systemctl --user daemon-reload"**
 6. Execute **"systemctl --user start nagiosxi.service"**
 7. Execute **"systemctl --user status nagiosxi.service"** ( Make sure nagisxi.service is running )
-8. Execute **"systemctl --user enablenagiosxi.service"**
+8. Execute **"systemctl --user enable nagiosxi.service"**
+9. Execute "sudo reboot" ( Make sure that nagiosxi.service is still running normally after the host is restarted )
 
 #### Run `mongod` w/ HTTP support
 
