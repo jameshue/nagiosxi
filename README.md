@@ -21,7 +21,7 @@ The **Linux** environment is based on the following steps:
 2. Execute **“podman save nagiosxi -o nagiosxi-latest.tar”** then scp nagiosxi-latest.tar to the destination host you want to deploy.
 3. Execute **"podman load -i natiosxi-5.8.3.tar"** on the destination host of your deployment.
 
-(alternatively, you can build an image from Dockerfile: `docker build -t="dockerfile/mongodb" github.com/dockerfile/mongodb`)
+( In the Linux environment, since there is /var/run/podman/podman:sock, the image can be generated from the Dockerfile at once. )
 
 
 ### Usage ( Containerize )
