@@ -30,11 +30,8 @@ The **Linux** environment is based on the following steps:
 
 #### Setup firewall
 
-1. Check the status of your firewall.
-
-   firewall-cmd --state
-
-4. 
+1. "# firewall-cmd --state" (Check the status of your firewall.)
+2.  
 
 #### Run `nagiosxi`
 
