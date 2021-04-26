@@ -28,6 +28,14 @@ The **Linux** environment is based on the following steps:
 
 ### Usage ( Containerize )
 
+#### Setup firewall
+
+1. Check the status of your firewall.
+
+   firewall-cmd --state
+
+4. 
+
 #### Run `nagiosxi`
 
     podman run --privileged --name nagiosxi -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d --name nagiosxi nagiosxi:latest
