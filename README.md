@@ -31,7 +31,10 @@ The **Linux** environment is based on the following steps:
 #### Setup firewall
 
 1. "# firewall-cmd --state" (Check the status of your firewall.)
-2.  
+2. "# firewall-cmd --get-active-zones" (Retrieve your currently active zones. Take a note of the zone within which you wish to open ports 80 and 443)
+3. The port 80 and port 443 ports are listed with Firewalld as http and https services. To temporarily open both ports execute
+   "# firewall-cmd --zone=public --add-service=http"
+   "# firewall-cmd --zone=public --add-service=https""
 
 #### Run `nagiosxi`
 
