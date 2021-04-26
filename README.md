@@ -1,4 +1,4 @@
-# Nagiosxi Dockerize/Containerize description
+# Nagiosxi Deployment description
 
 The compilation of this repository is all done in the podman environment.
 
@@ -7,7 +7,7 @@ The compilation of this repository is all done in the podman environment.
 * [registry.access.redhat.com/ubi8/ubi](https://catalog.redhat.com/software/containers/ubi8/ubi/5c359854d70cc534b3a3784e?gti-tabs=unauthenticated&container-tabs=gti)
 
 
-### Installation
+### Installation ( Dockerize )
 
 1. Install [Docker](https://www.docker.com/).
 
@@ -16,7 +16,7 @@ The compilation of this repository is all done in the podman environment.
    (alternatively, you can build an image from Dockerfile: `docker build -t="dockerfile/mongodb" github.com/dockerfile/mongodb`)
 
 
-### Usage
+### Usage ( Containerize )
 
 #### Run `mongod`
 
