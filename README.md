@@ -64,6 +64,6 @@ The **Linux** environment is based on the following steps:
 8. Execute **"systemctl --user enable nagiosxi.service"**
 9. Execute "sudo reboot" ( Make sure that nagiosxi.service is still running normally after the host is restarted )
 
-You will need to set up nat port forwarding with:_  
+Now you can visit the initialization webpage of nagiosxi
 
-    VBoxManage modifyvm "boot2docker-vm" --natpf1 "guestmongodb,tcp,127.0.0.1,27017,,27017"
+    http://host-ip_address or url-doman_name/nagiosxi
