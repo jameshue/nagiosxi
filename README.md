@@ -9,10 +9,11 @@ The compilation of this repository is all done in the podman environment.
 
 ### Installation ( Dockerize )
 The **Windows-10** environment is based on the following steps:
-1. You can build an image from Windows-10/Dockerfile: **"docker build -t nagiosxi ."** .  (Linux running on WSL platform.)
-2. Execute **“podman save nagiosxi -o nagiosxi-ubi.tar”** and scp to a **VM** host that can connect to the internet.
+1. You can build an image from Windows-10/Dockerfile: **"docker build -t nagiosxi-ubi8 ."** .  (Linux running on WSL platform.)
+2. Execute **“podman save nagiosxi -o nagiosxi-ubi8.tar”** and scp to a **VM** host that can connect to the internet.
 3. Execute **"podman run -it --name nagios-ubi8 bash"** on the VM host, and then execute **"yum -y install nagiosxi"** in the container.
-4. 
+4. Exit the container and execute **"podman commit natiosxi-ubi8 natiosxi:5.8.3"**
+5. 
 
    (alternatively, you can build an image from Dockerfile: `docker build -t="dockerfile/mongodb" github.com/dockerfile/mongodb`)
 
