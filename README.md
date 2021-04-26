@@ -2,7 +2,11 @@
 
 The compilation of this repository is all done in the podman environment
 
-### The installation steps of nagiosxi official website are as follows:
+### Schematic diagram of nagiosxi deployment process
+
+
+
+### The installation steps of nagiosxi official website are as follows
 
 * [RPM Repositories](https://repo.nagios.com/?repo=rpm-rhel)
 
