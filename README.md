@@ -9,6 +9,7 @@ The compilation of this repository is all done in the podman environment.
 
 ### Installation ( Dockerize )
 The **Windows-10** environment is based on the following steps:
+
 1. You can build an image from Windows-10/Dockerfile: **"docker build -t nagiosxi-ubi8 ."** .  (Linux running on WSL platform.)
 2. Execute **“podman save nagiosxi -o nagiosxi-ubi8.tar”** and scp to a **VM** host that can connect to the internet.
 3. Execute **"podman run -it --name nagios-ubi8 bash"** on the VM host, and then execute **"yum -y install nagiosxi"** in the container.
@@ -17,6 +18,7 @@ The **Windows-10** environment is based on the following steps:
 6. Execute **"podman load -i natiosxi-5.8.3.tar"** on the destination host of your deployment.
 
 The **Linux** environment is based on the following steps:
+
 1. You can build an image from Linux/Dockerfile: **"docker build -t nagiosxi:latest ."** .
 2. Execute **“podman save nagiosxi -o nagiosxi-latest.tar”** then scp nagiosxi-latest.tar to the destination host you want to deploy.
 3. Execute **"podman load -i natiosxi-5.8.3.tar"** on the destination host of your deployment.
@@ -30,9 +32,16 @@ The **Linux** environment is based on the following steps:
 
     podman run --privileged --name nagiosxi -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d --name nagiosxi nagiosxi:latest
 
-#### Run `mongod` w/ persistent/shared directory
+#### Configure systemd
 
-    docker run -d -p 27017:27017 -v <db-dir>:/data/db --name mongodb dockerfile/mongodb
+1. Log in as a general user.
+2. sudo add **"net.ipv4.ip_unprivileged_port_start=0"** to /etc/sysctl.conf.
+3. Execute **"mkdir ~/.config/systemd/user -p"**
+4. Execute **"podman generate systemd nagiosxi > ~/.config/systemd/user/nagiosxi.service"**
+5. Execute **"systemctl --user daemon-reload"**
+6. Execute **"systemctl --user start nagiosxi.service"**
+7. Execute **"systemctl --user status nagiosxi.service"** ( Make sure nagisxi.service is running )
+8. Execute **"systemctl --user enablenagiosxi.service"**
 
 #### Run `mongod` w/ HTTP support
 
