@@ -1,11 +1,14 @@
 # Nagiosxi Deployment description
 
-The compilation of this repository is all done in the podman environment.
+The compilation of this repository is all done in the podman environment
+
+### The installation steps of nagiosxi official website are as follows:
+
+* [RPM Repositories](https://repo.nagios.com/?repo=rpm-rhel)
 
 ### Base Docker Image
 
 * [registry.access.redhat.com/ubi8/ubi](https://catalog.redhat.com/software/containers/ubi8/ubi/5c359854d70cc534b3a3784e?gti-tabs=unauthenticated&container-tabs=gti)
-
 
 ### Installation ( Dockerize )
 The **Windows-10** environment is based on the following steps:
