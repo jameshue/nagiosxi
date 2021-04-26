@@ -30,7 +30,10 @@ The **Linux** environment is based on the following steps:
 
 #### Setup firewall
 
-1. "# firewall-cmd --state" (Check the status of your firewall.)
+1. Check the status of your firewall.
+
+   "# firewall-cmd --state"
+
 2. Retrieve your currently active zones. Take a note of the zone within which you wish to open ports 80 and 443：
 
    "# firewall-cmd --get-active-zones"
