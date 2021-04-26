@@ -26,9 +26,9 @@ The **Linux** environment is based on the following steps:
 
 ### Usage ( Containerize )
 
-#### Run `mongod`
+#### Run `nagiosxi`
 
-    docker run -d -p 27017:27017 --name mongodb dockerfile/mongodb
+    podman run --privileged --name nagiosxi -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d --name nagiosxi nagiosxi:
 
 #### Run `mongod` w/ persistent/shared directory
 
