@@ -10,9 +10,9 @@ The compilation of this repository is all done in the podman environment.
 ### Installation ( Dockerize )
 
 The following steps are required to complete docker-image in the **Windows-10** environment:
-1. You can build an image from Dockerfile: **"docker build -t nginsxi -f windows-10/Dockerfile .**" .
-
-2. Download [automated build](https://registry.hub.docker.com/u/dockerfile/mongodb/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull dockerfile/mongodb`
+1. You can build an image from Windows-10/Dockerfile: **"docker build -t nagiosxi .**" .  (Linux running on WSL platform.)
+2. Execute **“podman save nagiosxi -o nagiosxi-ubi.tar”** and scp to a virtual host that can connect to the internet.
+3. 
 
    (alternatively, you can build an image from Dockerfile: `docker build -t="dockerfile/mongodb" github.com/dockerfile/mongodb`)
 
