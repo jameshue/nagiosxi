@@ -18,7 +18,7 @@ The compilation of this repository is all done in the podman environment
 
 ### The deployment job has the following three configurations to be completed
 
--  [Firewall Setup](#Setup firewall)
+- [Firewall Setup](##Setup firewall)
 
 ### Installation ( Dockerize )
 The **Windows-10** environment is based on the following steps:
