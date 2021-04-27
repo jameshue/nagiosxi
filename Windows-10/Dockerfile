@@ -5,7 +5,7 @@ ENV container docker
 RUN  rm -rf /etc/localtime; \
 	ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime; \
 	yum -y install dnf-plugins-core; \
-	subscription-manager register --username=service@cenoq.net --password=28004668 --auto-attach; \
+	subscription-manager register --username=<your account-name> --password=<your passwd> --auto-attach; \
 	yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm; \
 	subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms; \
 	rpm -Uvh https://repo.nagios.com/nagios/8/nagios-repo-8-1.el8.noarch.rpm; \
