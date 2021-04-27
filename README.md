@@ -19,6 +19,8 @@ The compilation of this repository is all done in the podman environment
 ### The deployment job has the following three configurations to be completed
 
 - [Firewall configuration](#Firewall-configuration)
+- [MySQL Database planning](#MySQL-Database-planning)
+- [Configure systemd](#Configure-systemd)
 
 ### Installation ( Dockerize )
 The **Windows-10** environment is based on the following steps:
@@ -61,7 +63,7 @@ The **Linux** environment is based on the following steps:
 
    "# firewall-cmd --list-all"
  
-#### Configure MySQL and Run `nagiosxi container`  
+#### MySQL Database planning
 
 1. Log in as a general user.
 2. mkdir -p ~/username/nagiosxi/mysql
