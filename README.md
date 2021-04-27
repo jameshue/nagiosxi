@@ -35,7 +35,7 @@ The **Linux** environment is based on the following steps:
 ( In the Linux environment, since there is /var/run/podman/podman:sock, the image can be generated from the Dockerfile at once. )
 
 
-### Usage ( Containerize )
+### Deploy ( Containerize )
 
 #### Setup firewall
 
@@ -57,10 +57,23 @@ The **Linux** environment is based on the following steps:
 
    "# firewall-cmd --list-all"
 
-#### Run `nagiosxi`
+#### Run 
+#### Configure MySQL and Run `nagiosxi container`  
 
-    podman run --privileged --name nagiosxi -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d --name nagiosxi nagiosxi:latest
-
+1. Log in as a general user.
+2. mkdir -p ~/username/nagiosxi/mysql
+3. podman run --privileged --name nagiosxi -v /sys/fs/cgroup:/sys/fs/cgroup:ro \  
+   -v /home/username/nagiosxi/mysql:/mnt/mysql \  
+   -p 80:80 -p 443:443 -d --name nagiosxi nagiosxi:latest
+4. podman exec -it nagiosxi bash
+5. rsync -avA /var/lib/mysql /mnt/mysql
+6. exit
+7. podman stop nagiosxi
+8. podman rm nagiosxi
+10. podman run --privileged --name nagiosxi -v /sys/fs/cgroup:/sys/fs/cgroup:ro \  
+   -v /home/username/nagiosxi/mysql:/var/lib/mysql \  
+   -p 80:80 -p 443:443 -d --name nagiosxi nagiosxi:latest
+    
 #### Configure systemd
 
 1. Log in as a general user.
