@@ -56,8 +56,7 @@ The **Linux** environment is based on the following steps:
 4. Check for open ports/services. The services with permanently open ports are listed on line starting with services:
 
    "# firewall-cmd --list-all"
-
-#### Run 
+ 
 #### Configure MySQL and Run `nagiosxi container`  
 
 1. Log in as a general user.
