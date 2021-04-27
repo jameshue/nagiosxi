@@ -1,3 +1,4 @@
+<img src="img/.svg" width="192">
 # Nagiosxi Deployment description
 
 The compilation of this repository is all done in the podman environment
