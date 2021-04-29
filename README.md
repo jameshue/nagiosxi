@@ -20,7 +20,7 @@ The compilation of this repository is all done in the podman environment
 - [MySQL Database planning](#MySQL-Database-planning)
 - [Configure systemd](#Configure-systemd)
 
-### Installation ( Dockerize )
+### Build a Dockerfile image ( Dockerize )
 The **Windows-10** environment is based on the following steps:
 
 1. You can build an image from Windows-10/Dockerfile: **"docker build -t nagiosxi-ubi8 ."** .  (Linux running on WSL platform.)
