@@ -57,7 +57,7 @@ The **Linux** environment is based on the following steps:
    "# firewall-cmd --zone=public --permanent --add-service=https"  
    "# firewall-cmd --reload"
 
-Check for open ports/services. The services with permanently open ports are listed on line starting with services:
+4.Check for open ports/services. The services with permanently open ports are listed on line starting with services:
 
     ~# firewall-cmd --list-all
 
