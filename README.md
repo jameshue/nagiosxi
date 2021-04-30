@@ -43,7 +43,7 @@ The **Linux** environment is based on the following steps:
 
 #### Firewall configuration
 
-**1)**.Check the status of your firewall.
+**1)** Check the status of your firewall.
 
     ~# firewall-cmd --state"
 
