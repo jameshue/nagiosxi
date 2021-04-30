@@ -8,7 +8,7 @@ The compilation of this repository is all done in the podman environment
 
 ### The installation steps of nagiosxi official website are as follows
 
-* [RPM Repositories](https://repo.nagios.com/?repo=rpm-rhel)
+* [RPM Repositories of Nagiosxi](https://repo.nagios.com/?repo=rpm-rhel)
 
 ### Base Docker Image
 
