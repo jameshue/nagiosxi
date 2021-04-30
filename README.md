@@ -51,7 +51,7 @@ The **Linux** environment is based on the following steps:
 
    "# firewall-cmd --get-active-zones"
 
-3. Open port 80 and port 443 port permanently. Execute the below commands to open both ports permanently, hence, make the settings persistent after reboot:
+3.Open port 80 and port 443 port permanently. Execute the below commands to open both ports permanently, hence, make the settings persistent after reboot:
 
    "# firewall-cmd --zone=public --permanent --add-service=http"  
    "# firewall-cmd --zone=public --permanent --add-service=https"  
@@ -59,7 +59,7 @@ The **Linux** environment is based on the following steps:
 
 4.Check for open ports/services. The services with permanently open ports are listed on line starting with services:
 
-    ~# firewall-cmd --list-all
+   ~# firewall-cmd --list-all
 
 
 #### MySQL Database planning
