@@ -43,21 +43,21 @@ The **Linux** environment is based on the following steps:
 
 #### Firewall configuration
 
-**1**).Check the status of your firewall.
+**1).**Check the status of your firewall.
 
     ~# firewall-cmd --state"
 
-2).Retrieve your currently active zones. Take a note of the zone within which you wish to open ports 80 and 443：
+**2).**Retrieve your currently active zones. Take a note of the zone within which you wish to open ports 80 and 443：
 
     ~# firewall-cmd --get-active-zones"
 
-3).Open port 80 and port 443 port permanently. Execute the below commands to open both ports permanently, hence, make the settings persistent after reboot:
+**3).**Open port 80 and port 443 port permanently. Execute the below commands to open both ports permanently, hence, make the settings persistent after reboot:
 
     ~# firewall-cmd --zone=public --permanent --add-service=http"  
     ~# firewall-cmd --zone=public --permanent --add-service=https"  
     ~# firewall-cmd --reload"
 
-4).Check for open ports/services. The services with permanently open ports are listed on line starting with services:
+**4).**Check for open ports/services. The services with permanently open ports are listed on line starting with services:
 
     ~# firewall-cmd --list-all
 
