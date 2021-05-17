@@ -27,29 +27,13 @@ The Dockerize process does not require two steps.
 ### Build a Dockerfile image ( Dockerize )
 The pre-operation steps for building a nagiosxi Docker image are as follows:
 
-**1)** You can build an image from 2-steps/Dockerfile:  (Linux running on WSL platform.)
+**1)** You start building from the 2-steps/ncpa/ directory:
 
     docker build -t nagiosxi-agent .
 
-**2)** Execute the following command: 
+**2）** Then execute
 
-    podman run --privileged --name nagiosxi-agent -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 5693:5693 -d nagiosxi-agent:2.3.1-1
-    
-**3)** Execute the following command to enter the container： 
-
-	podman exec -it --name nagiosxi bash
-
-**4)** Then execute in the container follow:
-
-	yum -y install nagiosxi
-
-**5)** Leave the container and execute the following commands:
-
-	podman commit natiosxi-ubi8 natiosxi:5.8.3-1
-
-**6）** Then execute
-
-	podman save natiosxi:5.8.3-1 -o natiosxi_5.8.3-1.tar
+	podman save natiosxi-agent:5.8.3-1 -o natiosxi-agent-5.8.3-1.tar
 
 **7)** You can now scp **natiosxi_5.8.3-1.tar** to the destination host you want to deploy.
 
