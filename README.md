@@ -2,7 +2,7 @@
 
 The compilation of this repository is all done in the podman environment. 
 
-The reason nagiosxi needs to complete two steps is that after completing the RPM`s way installation, you need to initialize nagiosxi in private mode.
+The reason that nagiosxi Dockerize complete two steps is that after completing the RPM`s way installation, you need to initialize nagiosxi in private mode.
 
 ### Schematic diagram of nagiosxi deployment process
 
