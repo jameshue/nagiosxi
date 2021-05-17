@@ -21,17 +21,20 @@ The compilation of this repository is all done in the podman environment
 - [Configure systemd](#Configure-systemd)
 
 ### Build a Dockerfile image ( Dockerize )
-The **Windows-10** environment is based on the following steps:
+The pre-operation steps for building a nagiosxi Docker image are as follows:
 
-1. You can build an image from Windows-10/Dockerfile: **"docker build -t nagiosxi-ubi8 ."** .  (Linux running on WSL platform.)
-2. Execute **“podman save nagiosxi -o nagiosxi-ubi8.tar”** and scp to a **VM** host that can connect to the internet.
-3. Execute **"podman run -it --name nagios-ubi8 bash"** on the VM host, and then execute **"yum -y install nagiosxi"** in the container.
-4. Exit the container and execute **"podman commit natiosxi-ubi8 natiosxi:5.8.3"** then execute **"podman save natiosxi:5.8.3 -o natiosxi-5.8.3.tar"** .
-5. scp natiosxi-5.8.3.tar to the destination host you want to deploy.
-6. Execute **"podman load -i natiosxi-5.8.3.tar"** on the destination host of your deployment.
+**1** You can build an image from Windows-10/Dockerfile: **" ."** .  (Linux running on WSL platform.)
+
+    ~# docker build -t nagiosxi-ubi8
+
+3. Execute **“podman save nagiosxi -o nagiosxi-ubi8.tar”** and scp to a **VM** host that can connect to the internet.
+4. Execute **"podman run -it --name nagios-ubi8 bash"** on the VM host, and then execute **"yum -y install nagiosxi"** in the container.
+5. Exit the container and execute **"podman commit natiosxi-ubi8 natiosxi:5.8.3"** then execute **"podman save natiosxi:5.8.3 -o natiosxi-5.8.3.tar"** .
+6. scp natiosxi-5.8.3.tar to the destination host you want to deploy.
+7. Execute **"podman load -i natiosxi-5.8.3.tar"** on the destination host of your deployment.
 
 The **Linux** environment is based on the following steps:
-
+~
 1. You can build an image from Linux/Dockerfile: **"docker build -t nagiosxi:latest ."** .
 2. Execute **“podman save nagiosxi -o nagiosxi-latest.tar”** then scp nagiosxi-latest.tar to the destination host you want to deploy.
 3. Execute **"podman load -i natiosxi-5.8.3.tar"** on the destination host of your deployment.
