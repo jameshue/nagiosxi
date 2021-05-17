@@ -23,11 +23,14 @@ The compilation of this repository is all done in the podman environment
 ### Build a Dockerfile image ( Dockerize )
 The pre-operation steps for building a nagiosxi Docker image are as follows:
 
-**1** You can build an image from Windows-10/Dockerfile: **" ."** .  (Linux running on WSL platform.)
+**1** You can build an image from 2-steps/Dockerfile:  (Linux running on WSL platform.)
 
-    ~# docker build -t nagiosxi-ubi8
+    ~# docker build -t nagiosxi-ubi8 .
 
-3. Execute **“podman save nagiosxi -o nagiosxi-ubi8.tar”** and scp to a **VM** host that can connect to the internet.
+**2** Execute the script from 2-staps/run.sh 
+
+    ~# podman run --privileged --name nagiosxi -v nagiosxi-etc:/usr/local/nagios/etc -v mysql:/var/lib/mysql -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d nagiosxi:5.8.3-1
+
 4. Execute **"podman run -it --name nagios-ubi8 bash"** on the VM host, and then execute **"yum -y install nagiosxi"** in the container.
 5. Exit the container and execute **"podman commit natiosxi-ubi8 natiosxi:5.8.3"** then execute **"podman save natiosxi:5.8.3 -o natiosxi-5.8.3.tar"** .
 6. scp natiosxi-5.8.3.tar to the destination host you want to deploy.
