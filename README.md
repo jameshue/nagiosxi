@@ -108,7 +108,7 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
     systemctl --user daemon-reload 
     systemctl --user start nagiosxi.service 
     
-**4)** Make sure nagisxi.service is runnin:
+**4)** Make sure nagisxi.service is running:
 
 	systemctl --user status nagiosxi.service
 
