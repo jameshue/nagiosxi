@@ -95,15 +95,27 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
     
 #### Configure systemd
 
-1. Log in as a general user.
-2. sudo add **"net.ipv4.ip_unprivileged_port_start=0"** to /etc/sysctl.conf.
-3. Execute **"mkdir ~/.config/systemd/user -p"**
-4. Execute **"podman generate systemd nagiosxi > ~/.config/systemd/user/nagiosxi.service"**
-5. Execute **"systemctl --user daemon-reload"**
-6. Execute **"systemctl --user start nagiosxi.service"**
-7. Execute **"systemctl --user status nagiosxi.service"** ( Make sure nagisxi.service is running )
-8. Execute **"systemctl --user enable nagiosxi.service"**
-9. Execute "sudo reboot" ( Make sure that nagiosxi.service is still running normally after the host is restarted )
+**1)** Log in as a general user. 
+
+**2)** Use sudo to execute or execute the following commands with root privileges
+
+	echo "net.ipv4.ip_unprivileged_port_start=0" >> /etc/sysctl.conf
+
+**3)** Then execute the following command:
+
+	mkdir ~/.config/systemd/user -p 
+    podman generate systemd nagiosxi > ~/.config/systemd/user/nagiosxi.service 
+    systemctl --user daemon-reload 
+    systemctl --user start nagiosxi.service 
+    
+**4)** Make sure nagisxi.service is runnin:
+
+	systemctl --user status nagiosxi.service
+
+**5)** Make sure that nagiosxi.service is still running normally after the host is restarted:
+	
+    systemctl --user enable nagiosxi.service
+    sudo reboot
 
 Now you can visit the initialization webpage of nagiosxi
 
