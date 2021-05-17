@@ -29,12 +29,12 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 
 **1)** You can build an image from 2-steps/Dockerfile:  (Linux running on WSL platform.)
 
-    docker build -t nagiosxi-ubi8 .
+    docker build -t nagiosxi-agent .
 
 **2)** Execute the following command: 
 
-    podman run --privileged --name nagiosxi -v nagiosxi-etc:/usr/local/nagios/etc -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d nagiosxi:5.8.3-1
-
+    podman run --privileged --name nagiosxi-agent -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 5693:5693 -d nagiosxi-agent:2.3.1-1
+    
 **3)** Execute the following command to enter the container： 
 
 	podman exec -it --name nagiosxi bash
@@ -65,10 +65,9 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 
     firewall-cmd --get-active-zones
 
-**(3)** Open port 80 and port 443 port permanently. Execute the below commands to open both ports permanently, hence, make the settings persistent after reboot:
+**(3)** Open port 5693 port permanently. Execute the below commands to open both ports permanently, hence, make the settings persistent after reboot:
 
-    firewall-cmd --zone=public --permanent --add-service=http  
-    firewall-cmd --zone=public --permanent --add-service=https  
+    firewall-cmd --zone=public --permanent --add-port=5693-5693/tcp
     firewall-cmd --reload
 
 **(4)** Check for open ports/services. The services with permanently open ports are listed on line starting with services:
