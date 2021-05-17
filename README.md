@@ -1,6 +1,6 @@
 # Nagiosxi Deployment description
 
-<img src="img/podman.svg" width="1024">
+<img src="img/podman.svg" width="64">
 
 The compilation of this repository is all done in the podman environment. 
 
