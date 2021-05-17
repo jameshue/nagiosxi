@@ -23,27 +23,31 @@ The compilation of this repository is all done in the podman environment
 ### Build a Dockerfile image ( Dockerize )
 The pre-operation steps for building a nagiosxi Docker image are as follows:
 
-**1** You can build an image from 2-steps/Dockerfile:  (Linux running on WSL platform.)
+**1)** You can build an image from 2-steps/Dockerfile:  (Linux running on WSL platform.)
 
     docker build -t nagiosxi-ubi8 .
 
-**2** Execute the script from 2-staps/run.sh 
+**2)** Execute the script from 2-staps/run.sh 
 
     podman run --privileged --name nagiosxi -v nagiosxi-etc:/usr/local/nagios/etc -v mysql:/var/lib/mysql -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d nagiosxi:5.8.3-1
 
-4. Execute **"podman run -it --name nagios-ubi8 bash"** on the VM host, and then execute **"yum -y install nagiosxi"** in the container.
-5. Exit the container and execute **"podman commit natiosxi-ubi8 natiosxi:5.8.3"** then execute **"podman save natiosxi:5.8.3 -o natiosxi-5.8.3.tar"** .
-6. scp natiosxi-5.8.3.tar to the destination host you want to deploy.
-7. Execute **"podman load -i natiosxi-5.8.3.tar"** on the destination host of your deployment.
+**3)** Execute the following command to enter the container： 
 
-The **Linux** environment is based on the following steps:
-~
-1. You can build an image from Linux/Dockerfile: **"docker build -t nagiosxi:latest ."** .
-2. Execute **“podman save nagiosxi -o nagiosxi-latest.tar”** then scp nagiosxi-latest.tar to the destination host you want to deploy.
-3. Execute **"podman load -i natiosxi-5.8.3.tar"** on the destination host of your deployment.
+	podman exec -it --name nagiosxi bash
 
-( In the Linux environment, since there is /run/podman/podman:sock, the image can be generated from the Dockerfile at once. )
+**4)** Then execute in the container follow:
 
+	yum -y install nagiosxi
+
+**5)** Leave the container and execute the following commands:
+
+	podman commit natiosxi-ubi8 natiosxi:5.8.3-1
+
+**6）** Then execute
+
+	podman save natiosxi:5.8.3-1 -o natiosxi_5.8.3-1.tar
+
+**7)** You can now scp **natiosxi_5.8.3-1.tar** to the destination host you want to deploy.
 
 ### Deploy ( Containerize )
 
