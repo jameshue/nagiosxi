@@ -21,7 +21,7 @@ The Dockerize process does not require two steps.
 ### The deployment job has the following three configurations to be completed
 
 - [Firewall configuration](#Firewall-configuration)
-- [MySQL Database planning](#MySQL-Database-planning)
+- [Permanent volume planning](#Permanent-volume-planning)
 - [Configure systemd](#Configure-systemd)
 
 ### Build a Dockerfile image ( Dockerize )
@@ -59,7 +59,7 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
     firewall-cmd --list-all
 
 
-#### MySQL Database planning
+#### Permanent volume planning
 **1)** Log in to RHEL as a general user and execute the following commands:
 
     podman run --privileged --name nagiosxi -v nagiosxi-etc:/mnt/etc -v nagiosxi-mysql:/mnt/mysql -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d nagiosxi:5.8.3-1
