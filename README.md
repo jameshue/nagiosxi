@@ -29,7 +29,7 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 
 **2)** Execute the script from 2-staps/run.sh 
 
-    podman run --privileged --name nagiosxi -v nagiosxi-etc:/usr/local/nagios/etc -v mysql:/var/lib/mysql -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d nagiosxi:5.8.3-1
+    podman run --privileged --name nagiosxi -v nagiosxi-etc:/usr/local/nagios/etc -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d nagiosxi:5.8.3-1
 
 **3)** Execute the following command to enter the container： 
 
