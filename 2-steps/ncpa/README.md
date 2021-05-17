@@ -20,7 +20,7 @@ The Dockerize process does not require two steps.
 
 ### The deployment job has the following three configurations to be completed
 
-- [Deploy](Deploy-(-Containerize-))
+- [Deploy](#deploy--containerize-)
 - [Firewall configuration](#Firewall-configuration)
 - [Permanent volume planning](#Permanent-volume-planning)
 - [Configure systemd](#Configure-systemd)
