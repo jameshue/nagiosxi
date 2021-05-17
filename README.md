@@ -25,11 +25,11 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 
 **1** You can build an image from 2-steps/Dockerfile:  (Linux running on WSL platform.)
 
-    ~# docker build -t nagiosxi-ubi8 .
+    docker build -t nagiosxi-ubi8 .
 
 **2** Execute the script from 2-staps/run.sh 
 
-    ~# podman run --privileged --name nagiosxi -v nagiosxi-etc:/usr/local/nagios/etc -v mysql:/var/lib/mysql -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d nagiosxi:5.8.3-1
+    podman run --privileged --name nagiosxi -v nagiosxi-etc:/usr/local/nagios/etc -v mysql:/var/lib/mysql -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d nagiosxi:5.8.3-1
 
 4. Execute **"podman run -it --name nagios-ubi8 bash"** on the VM host, and then execute **"yum -y install nagiosxi"** in the container.
 5. Exit the container and execute **"podman commit natiosxi-ubi8 natiosxi:5.8.3"** then execute **"podman save natiosxi:5.8.3 -o natiosxi-5.8.3.tar"** .
@@ -51,21 +51,21 @@ The **Linux** environment is based on the following steps:
 
 **(1)** Check the status of your firewall.
 
-    ~# firewall-cmd --state"
+    firewall-cmd --state
 
 **(2)** Retrieve your currently active zones. Take a note of the zone within which you wish to open ports 80 and 443：
 
-    ~# firewall-cmd --get-active-zones"
+    firewall-cmd --get-active-zones
 
 **(3)** Open port 80 and port 443 port permanently. Execute the below commands to open both ports permanently, hence, make the settings persistent after reboot:
 
-    ~# firewall-cmd --zone=public --permanent --add-service=http"  
-    ~# firewall-cmd --zone=public --permanent --add-service=https"  
-    ~# firewall-cmd --reload"
+    firewall-cmd --zone=public --permanent --add-service=http  
+    firewall-cmd --zone=public --permanent --add-service=https  
+    firewall-cmd --reload
 
 **(4)** Check for open ports/services. The services with permanently open ports are listed on line starting with services:
 
-    ~# firewall-cmd --list-all
+    firewall-cmd --list-all
 
 
 #### MySQL Database planning
