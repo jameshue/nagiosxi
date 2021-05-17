@@ -21,6 +21,7 @@ The reason that nagiosxi Dockerize complete two steps is that after completing t
 
 ### The deployment job has the following three configurations to be completed
 
+- [Deploy](#deploy--containerize-)
 - [Firewall configuration](#Firewall-configuration)
 - [MySQL Database planning](#MySQL-Database-planning)
 - [Configure systemd](#Configure-systemd)
