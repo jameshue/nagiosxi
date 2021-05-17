@@ -73,20 +73,25 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 
 
 #### MySQL Database planning
+**1)** Log in to RHEL as a general user and execute the following commands:
 
-1. Log in as a general user.
-2. mkdir -p ~/username/nagiosxi/mysql
-3. podman run --privileged --name nagiosxi -v /sys/fs/cgroup:/sys/fs/cgroup:ro \  
-   -v /home/username/nagiosxi/mysql:/mnt/mysql \  
-   -p 80:80 -p 443:443 -d --name nagiosxi nagiosxi:latest
-4. podman exec -it nagiosxi bash
-5. rsync -avA /var/lib/mysql /mnt/mysql
-6. exit
-7. podman stop nagiosxi
-8. podman rm nagiosxi
-10. podman run --privileged --name nagiosxi -v /sys/fs/cgroup:/sys/fs/cgroup:ro \  
-   -v /home/username/nagiosxi/mysql:/var/lib/mysql \  
-   -p 80:80 -p 443:443 -d --name nagiosxi nagiosxi:latest
+    podman run --privileged --name nagiosxi -v nagiosxi-etc:/mnt/etc -v nagiosxi-mysql:/mnt/mysql -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d nagiosxi:5.8.3-1
+    
+**2)** Execute the following command to enter the container:
+	
+    podman exec -it nagiosxi bash
+    systemctl stop mysqld 
+    rsync -avA /var/lib/mysql/ /mnt/mysql/ 
+    rsync -avA /usr/local/nagios/etc/ /mnt/etc/ 
+   
+**3)** Leave the container and execute the following commands:
+
+	podman stop nagiosxi 
+	podman rm nagiosxi 
+
+**4)** Execute the script from 2-staps/run.sh
+
+	podman run --privileged --name nagiosxi -v nagiosxi-etc:/usr/local/nagios/etc -v nagiosxi-mysql:/var/lib/mysql -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d nagiosxi:5.8.3-1
     
 #### Configure systemd
 
