@@ -1,4 +1,4 @@
-# Nagiosxi Deployment description
+# Nagiosxi-Agent (NCPA) Deployment description
 
 <img src="../../img/podman.svg" width="256">
 
@@ -6,7 +6,7 @@ The compilation of this repository is all done in the podman environment.
 
 The Dockerize process does not require two steps.
 
-### Schematic diagram of nagiosxi deployment process
+### Schematic diagram of nagios-agent (NCPA) deployment process
 
 <img src="../../img/nagiosxi-ncpa.svg" width="768">
 
