@@ -12,7 +12,7 @@ The Dockerize process does not require two steps.
 
 ### The installation steps of nagiosxi official website are as follows
 
-* [RPM Repositories of Nagiosxi](https://repo.nagios.com/?repo=rpm-rhel)
+* [RPM Repositories of Nagiosxi-NCPA](https://assets.nagios.com/downloads/ncpa/docs/Installing-NCPA.pdf)
 
 ### Base Docker Image
 
