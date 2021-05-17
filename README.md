@@ -1,7 +1,6 @@
 # Nagiosxi Deployment description
 
-<img src="img/podman.svg" width="256">(https://podman.io/)
-
+ <a href="https://podman.io/"><img src="img/podman.svg" width="256"></a>
 The compilation of this repository is all done in the podman environment. 
 
 The reason that nagiosxi Dockerize complete two steps is that after completing the RPM`s way installation, you need to initialize nagiosxi in private mode.
