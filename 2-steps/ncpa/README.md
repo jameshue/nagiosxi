@@ -8,7 +8,7 @@ The reason that nagiosxi Dockerize complete two steps is that after completing t
 
 ### Schematic diagram of nagiosxi deployment process
 
-<img src="../../img/nagiosxi-ncpa.svg" width="64">
+<img src="../../img/nagiosxi-ncpa.svg" width="1024">
 
 ### The installation steps of nagiosxi official website are as follows
 
