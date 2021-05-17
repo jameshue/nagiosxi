@@ -13,7 +13,7 @@ The reason that nagiosxi Dockerize complete two steps is that after completing t
 ### The installation steps of nagiosxi official website are as follows
 
 * [RPM Repositories of Nagiosxi](https://repo.nagios.com/?repo=rpm-rhel)  
-* [Nagiosxi-Agent (NCPA) Deployment description](2-steps/ncap/)
+* [Nagiosxi-Agent (NCPA) Deployment description](tree/master/2-steps/ncpa)
 
 ### Base Docker Image
 
