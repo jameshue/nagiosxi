@@ -62,23 +62,22 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 #### Permanent volume planning
 **1)** Log in to RHEL as a general user and execute the following commands:
 
-    podman run --privileged --name nagiosxi -v nagiosxi-etc:/mnt/etc -v nagiosxi-mysql:/mnt/mysql -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d nagiosxi:5.8.3-1
+    podman load -i nagiosxi-agent-2.3.1-1.tar 
+    podman run --privileged --name nagiosxi-agent -v ncpa_etc:/mnt/etc -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 5693:5693 -d nagiosxi-agent:2.3.1-1
     
 **2)** Execute the following command to enter the container:
 	
-    podman exec -it nagiosxi bash
-    systemctl stop mysqld 
-    rsync -avA /var/lib/mysql/ /mnt/mysql/ 
-    rsync -avA /usr/local/nagios/etc/ /mnt/etc/ 
-   
+    podman exec -it nagiosxi-agent bash  
+    rsync -avA /usr/local/ncpa/etc/ /mnt/etc/  
+
 **3)** Leave the container and execute the following commands:
 
-	podman stop nagiosxi 
-	podman rm nagiosxi 
+	podman stop nagiosxi-agent 
+	podman rm nagiosxi-agent 
 
 **4)** Execute the script from 2-staps/run.sh
 
-	podman run --privileged --name nagiosxi -v nagiosxi-etc:/usr/local/nagios/etc -v nagiosxi-mysql:/var/lib/mysql -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d nagiosxi:5.8.3-1
+	podman run --privileged --name nagiosxi -v ncpa_etc:/usr/local/ncpa/etc -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 5693:5693 -d nagiosxi-agent:2.3.1-1
     
 #### Configure systemd
 
