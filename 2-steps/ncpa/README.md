@@ -45,7 +45,7 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 
     firewall-cmd --state
 
-**(2)** Retrieve your currently active zones. Take a note of the zone within which you wish to open ports 80 and 443：
+**(2)** Retrieve your currently active zones. Take a note of the zone within which you wish to open ports 5693：
 
     firewall-cmd --get-active-zones
 
