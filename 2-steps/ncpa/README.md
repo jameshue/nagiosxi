@@ -75,9 +75,9 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 	podman stop nagiosxi-agent 
 	podman rm nagiosxi-agent 
 
-**4)** Execute the script from 2-staps/run.sh
+**4)** Execute the script from 2-staps/ncpa/run.sh
 
-	podman run --privileged --name nagiosxi -v ncpa_etc:/usr/local/ncpa/etc -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 5693:5693 -d nagiosxi-agent:2.3.1-1
+	podman run --privileged --name nagiosxi-agent -v ncpa_etc:/usr/local/ncpa/etc -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 5693:5693 -d nagiosxi-agent:2.3.1-1
     
 #### Configure systemd
 
@@ -90,17 +90,17 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 **3)** Then execute the following command:
 
 	mkdir ~/.config/systemd/user -p 
-    podman generate systemd nagiosxi > ~/.config/systemd/user/nagiosxi.service 
+    podman generate systemd nagiosxi-agent > ~/.config/systemd/user/nagiosxi-agent.service 
     systemctl --user daemon-reload 
-    systemctl --user start nagiosxi.service 
+    systemctl --user start nagiosxi-agent.service 
     
 **4)** Make sure nagisxi.service is running:
 
-	systemctl --user status nagiosxi.service
+	systemctl --user status nagiosxi-agent.service
 
 **5)** Make sure that nagiosxi.service is still running normally after the host is restarted:
 	
-    systemctl --user enable nagiosxi.service
+    systemctl --user enable nagiosxi-agent.service
     sudo reboot
 
 Now you can visit the initialization webpage of nagiosxi
