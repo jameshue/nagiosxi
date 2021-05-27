@@ -21,12 +21,13 @@ The reason that nagiosxi Dockerize complete two steps is that after completing t
 
 ### The deployment job has the following three configurations to be completed
 
+- [Build a Dockerfile image](#Build--a--Dockerfile--Image)
 - [Deploy](#deploy--containerize-)
 - [Firewall configuration](#Firewall-configuration)
 - [MySQL Database planning](#MySQL-Database-planning)
 - [Configure systemd](#Configure-systemd)
 
-### Build a Dockerfile image ( Dockerize )
+### Build a Dockerfile Image ( Dockerize )
 The pre-operation steps for building a nagiosxi Docker image are as follows:
 
 **1)** You can build an image from 2-steps/Dockerfile:  (Linux running on WSL platform.)
