@@ -67,7 +67,7 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
     podman load -i nagiosxi-agent-2.3.1-1.tar 
     podman run --privileged --name nagiosxi-agent -v ncpa_etc:/mnt/etc -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 5693:5693 -d nagiosxi-agent:2.3.1-1
     
-**2)** Execute the following command to enter the container:
+**2)** Then enter the container and execute the command:
 	
     podman exec -it nagiosxi-agent bash  
     rsync -avA /usr/local/ncpa/etc/ /mnt/etc/  
