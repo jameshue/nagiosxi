@@ -33,30 +33,30 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 
     docker build -t nagiosxi-agent .
 
-**2）** Then execute
+**2)** Then execute
 
 	podman save natiosxi-agent:5.8.3-1 -o natiosxi-agent-5.8.3-1.tar
 
-**3）** You can now scp **natiosxi_5.8.3-1.tar** to the destination host you want to deploy.
+**3)** You can now scp **natiosxi_5.8.3-1.tar** to the destination host you want to deploy.
 
 ### Deploy ( Containerize )
 
 #### Firewall configuration
 
-**(1)** Check the status of your firewall.
+**1)** Check the status of your firewall.
 
     firewall-cmd --state
 
-**(2)** Retrieve your currently active zones. Take a note of the zone within which you wish to open ports 5693：
+**2)** Retrieve your currently active zones. Take a note of the zone within which you wish to open ports 5693：
 
     firewall-cmd --get-active-zones
 
-**(3)** Open port 5693 port permanently. Execute the below commands to open both ports permanently, hence, make the settings persistent after reboot:
+**3)** Open port 5693 port permanently. Execute the below commands to open both ports permanently, hence, make the settings persistent after reboot:
 
     firewall-cmd --zone=public --permanent --add-port=5693-5693/tcp
     firewall-cmd --reload
 
-**(4)** Check for open ports/services. The services with permanently open ports are listed on line starting with services:
+**4)** Check for open ports/services. The services with permanently open ports are listed on line starting with services:
 
     firewall-cmd --list-all
 
