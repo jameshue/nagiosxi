@@ -38,23 +38,20 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 
     podman run --privileged --name nagiosxi -v nagiosxi-etc:/usr/local/nagios/etc -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d nagiosxi:5.8.3-1
 
-**3)** Execute the following command to enter the container： 
+**3)** Then enter the container and execute the command： 
 
 	podman exec -it --name nagiosxi bash
-
-**4)** Then execute in the container follow:
-
 	yum -y install nagiosxi
 
-**5)** Leave the container and execute the following commands:
+**4)** Leave the container and execute the following commands:
 
 	podman commit natiosxi-ubi8 natiosxi:5.8.3-1
 
-**6）** Then execute
+**5）** Then execute
 
 	podman save natiosxi:5.8.3-1 -o natiosxi_5.8.3-1.tar
 
-**7)** You can now scp **natiosxi_5.8.3-1.tar** to the destination host you want to deploy.
+**6)** You can now scp **natiosxi_5.8.3-1.tar** to the destination host you want to deploy.
 
 ### Deploy ( Containerize )
 
@@ -84,7 +81,7 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 
     podman run --privileged --name nagiosxi -v nagiosxi-etc:/mnt/etc -v nagiosxi-mysql:/mnt/mysql -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -p 443:443 -d nagiosxi:5.8.3-1
     
-**2)** Execute the following command to enter the container:
+**2)** Then enter the container and execute the command:
 	
     podman exec -it nagiosxi bash
     systemctl stop mysqld 
