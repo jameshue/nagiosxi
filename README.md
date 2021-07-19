@@ -45,7 +45,7 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 
 **4)** Leave the container and execute the following commands:
 
-	podman commit natiosxi-ubi8 natiosxi:5.8.3-1
+	podman commit natiosxi-ubi8 nagiosxi:5.8.3-1
 
 **5)** Then execute
 
