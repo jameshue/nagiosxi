@@ -45,13 +45,13 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 
 **4)** Leave the container and execute the following commands:
 
-	podman commit natiosxi-ubi8 nagiosxi:5.8.3-1
+	podman commit nagiosxi-ubi8 nagiosxi:5.8.3-1
 
 **5)** Then execute
 
-	podman save natiosxi:5.8.3-1 -o natiosxi_5.8.3-1.tar
+	podman save nagiosxi:5.8.3-1 -o nagiosxi_5.8.3-1.tar
 
-**6)** You can now scp **natiosxi_5.8.3-1.tar** to the destination host you want to deploy.
+**6)** You can now scp **nagiosxi_5.8.3-1.tar** to the destination host you want to deploy.
 
 ### Deploy ( Containerize )
 
