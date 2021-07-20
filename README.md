@@ -23,7 +23,7 @@ The reason that nagiosxi Dockerize complete two steps is that after completing t
 ### Base Docker Image
 * [registry.access.redhat.com/ubi8/ubi](https://catalog.redhat.com/software/containers/ubi8/ubi/5c359854d70cc534b3a3784e?gti-tabs=unauthenticated&container-tabs=gti)
 
-### The deployment job has the following three configurations to be completed
+### The deployment job has the following six configurations to be completed
 
 - [Kernal preparation of OS](#Kernal-preparation-of-OS)
 - [Build a Dockerfile image](#Build-a-Dockerfile-Image--Dockerize-)
