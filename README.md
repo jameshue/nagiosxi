@@ -32,7 +32,10 @@ The reason that nagiosxi Dockerize complete two steps is that after completing t
 - [Configure systemd](#Configure-systemd)
 
 ### Kernal preparation of OS
-Redhat Enterprise 8.4 uses cgroup V1 by default. Add audit=1 systemd.unified_cgroup_hierarchy=1 cgroup_enable=memory to kernel parameters ( grub2-mkconfig -o audit=1 /boot/efi/EFI/redhat/grub.cfg ) and reboot, cgroup v2 will be used instead. And now podman stats works just fine.
+Redhat Enterprise 8.4 uses cgroup V1 by default (Add to /etc/default/grub). Add **audit=1 systemd.unified_cgroup_hierarchy=1 cgroup_enable=memory** to kernel parameters and reboot, cgroup v2 will be used instead. And now podman stats works just fine.
+To compile the kernel, execute the following command:
+
+    grub2-mkconfig -o audit=1 /boot/efi/EFI/redhat/grub.cfg
 
 ### Build a Dockerfile Image ( Dockerize )
 The pre-operation steps for building a nagiosxi Docker image are as follows:
