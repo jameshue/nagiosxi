@@ -15,9 +15,10 @@ The reason that nagiosxi Dockerize complete two steps is that after completing t
 * [RPM Repositories of Nagiosxi](https://repo.nagios.com/?repo=rpm-rhel)  
 * [Nagiosxi-Agent (NCPA) Deployment description](/2-steps/ncpa)
 
-### Installation Configuration Reference
+### Configuration and setting reference
 * [Nagios XI Configuration Wizards and Installing](/docs/Nagios-XI-Configuration-Wizards-and-Installing.pdf)
 * [Introduction To Event Handlers in Nagios-XI](/docs/Introduction-To-Event-Handlers-in-Nagios-XI.pdf)
+* [OMNIbus and Network Manager](/docs/netcool_omnibus.pdf)
 
 ### Base Docker Image
 * [registry.access.redhat.com/ubi8/ubi](https://catalog.redhat.com/software/containers/ubi8/ubi/5c359854d70cc534b3a3784e?gti-tabs=unauthenticated&container-tabs=gti)
