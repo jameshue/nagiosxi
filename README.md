@@ -103,7 +103,6 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 **3)** Leave the container and execute the following commands:
 
 	podman stop nagiosxi 
-	podman rm nagiosxi 
 
 **4)** Execute script check from 2-staps/run.sh
 
