@@ -17,7 +17,6 @@ The reason that nagiosxi Dockerize complete two steps is that after completing t
 
 ### Configuration and setting reference
 * [Nagios XI Configuration Wizards and Installing](/docs/Nagios-XI-Configuration-Wizards-and-Installing.pdf)
-*  <a name="head1"><embed src="https://github.com/jameshue/nagiosxi/blob/master/docs/Introduction-To-Event-Handlers-in-Nagios-XI.pdf" type="application/pdf"/>Heading One </a>
 * [Introduction To Event Handlers in Nagios-XI](/docs/Introduction-To-Event-Handlers-in-Nagios-XI.pdf)
 * [OMNIbus and Network Manager](/docs/netcool_omnibus.pdf)
 
