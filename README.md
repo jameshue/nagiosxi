@@ -50,7 +50,7 @@ The pre-operation steps for building a nagiosxi Docker image are as follows:
 
 **1)** You can build an image from 2-steps/Dockerfile:  (Linux running on WSL platform.)
 
-    docker build -t nagiosxi-ubi8 .
+    docker build --build-arg REDHAT_USERNAME=james.xu@asuscloud.com --build-arg REDHAT_PASSWORD=J@me\$\*UJ@me\$\*U -t nagiosxi-ubi8 .
 
 **2)** Then execute the following command: ( 2-staps/add-nagiosxi-env.sh )
 
